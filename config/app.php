@@ -177,6 +177,8 @@ return [
 
         // Form e HTML
         Collective\Html\HtmlServiceProvider::class,
+        //PDF
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -232,6 +234,8 @@ return [
         // Form e HTML
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        //PDF
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
