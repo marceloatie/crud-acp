@@ -51,10 +51,7 @@ class ProfessorController extends Controller
      */
     public function insert(Request $request)
     {
-        $this->validate($request, [
-            'nome' => 'required',
-            'data_nascimento' => 'required',
-        ]);
+        $this->validate($request, Professor::camposObrigatorios());
 
         // Cria Professor
         $professor = new Professor;
@@ -92,10 +89,7 @@ class ProfessorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'nome' => 'required',
-            'data_nascimento' => 'required'
-        ]);
+        $this->validate($request, Professor::camposObrigatorios());
 
         // Atualiza Professor
         $professor = Professor::find($id);

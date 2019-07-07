@@ -18,4 +18,12 @@ class Professor extends Model
     {
         return $this->hasMany('App\Curso', 'id_professor');
     }
+
+    public static function camposObrigatorios()
+    {
+        return [
+            'nome' => 'required',
+            'data_nascimento' => 'required'
+        ];
+    }
 }
