@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <script src="{{ asset('js/ajax.js') }}"></script>
+
     @if ($aluno->id_aluno == null)
         <h1>Novo Aluno</h1>
         {!! Form::open(['action' => 'AlunoController@insert', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
