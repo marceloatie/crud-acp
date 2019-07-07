@@ -40,7 +40,7 @@ class ProfessorController extends Controller
      */
     public function novo()
     {
-        return view('professor.criar');
+        return view('professor.editar')->with('professor', new Professor);
     }
 
     /**
