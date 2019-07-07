@@ -52,16 +52,7 @@ class AlunoController extends Controller
      */
     public function insert(Request $request)
     {
-        $this->validate($request, [
-            'nome' => 'required',
-            'data_nascimento' => 'required',
-            'logradouro' => 'required',
-            'numero' => 'required',
-            'bairro' => 'required',
-            'cidade' => 'required',
-            'estado' => 'required',
-            'cep' => 'required',
-        ]);
+        $this->validate($request, Aluno::camposObrigatorios());
 
         // Cria Aluno
         $aluno = new Aluno;
@@ -111,9 +102,7 @@ class AlunoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'nome' => 'required',
-        ]);
+        $this->validate($request, Aluno::camposObrigatorios());
 
         // Atualiza Aluno
         $aluno = Aluno::find($id);
