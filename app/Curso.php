@@ -22,4 +22,10 @@ class Curso extends Model
     {
         return $this->hasMany('App\Aluno', 'id_curso');
     }
+
+    public static function camposObrigatorios(){
+        return [
+            'nome' => 'required',
+        ];
+    }
 }

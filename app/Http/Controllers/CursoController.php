@@ -52,9 +52,7 @@ class CursoController extends Controller
      */
     public function insert(Request $request)
     {
-        $this->validate($request, [
-            'nome' => 'required',
-        ]);
+        $this->validate($request, Curso::camposObrigatorios());
 
         // Cria Curso
         $curso = new Curso;
@@ -97,9 +95,7 @@ class CursoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'nome' => 'required',
-        ]);
+        $this->validate($request, Curso::camposObrigatorios());
 
         // Atualiza Curso
         $curso = Curso::find($id);
