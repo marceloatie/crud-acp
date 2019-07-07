@@ -17,31 +17,32 @@ Route::get('/', function () {
 
 //Professor
 //Route::resource('professor', 'ProfessorController');
-Route::any('/professor', 'ProfessorController@index');
-Route::any('/professor/novo', 'ProfessorController@novo');
-Route::any('/professor/insert', 'ProfessorController@insert');
-Route::any('/professor/editar/{id}', 'ProfessorController@editar');
-Route::any('/professor/update/{id}', 'ProfessorController@update');
-Route::any('/professor/delete/{id}', 'ProfessorController@delete');
+Route::get('/professor', 'ProfessorController@index');
+Route::get('/professor/novo', 'ProfessorController@novo');
+Route::post('/professor/insert', 'ProfessorController@insert');
+Route::get('/professor/editar/{id}', 'ProfessorController@editar');
+Route::post('/professor/update/{id}', 'ProfessorController@update');
+Route::get('/professor/delete/{id}', 'ProfessorController@delete');
 
 //Curso
 //Route::resource('curso', 'CursoController');
-Route::any('/curso', 'CursoController@index');
-Route::any('/curso/novo', 'CursoController@novo');
-Route::any('/curso/insert', 'CursoController@insert');
-Route::any('/curso/editar/{id}', 'CursoController@editar');
-Route::any('/curso/update/{id}', 'CursoController@update');
-Route::any('/curso/delete/{id}', 'CursoController@delete');
+Route::get('/curso', 'CursoController@index');
+Route::get('/curso/novo', 'CursoController@novo');
+Route::post('/curso/insert', 'CursoController@insert');
+Route::get('/curso/editar/{id}', 'CursoController@editar');
+Route::post('/curso/update/{id}', 'CursoController@update');
+Route::get('/curso/delete/{id}', 'CursoController@delete');
 
 //Aluno
 //Route::resource('curso', 'CursoController');
-Route::any('/aluno', 'AlunoController@index');
-Route::any('/aluno/novo', 'AlunoController@novo');
-Route::any('/aluno/insert', 'AlunoController@insert');
-Route::any('/aluno/editar/{id}', 'AlunoController@editar');
-Route::any('/aluno/update/{id}', 'AlunoController@update');
-Route::any('/aluno/delete/{id}', 'AlunoController@delete');
-Route::any('/aluno/ajaxcep/{cep}', 'AlunoController@ajaxCep');
+Route::get('/aluno', 'AlunoController@index');
+Route::get('/aluno/novo', 'AlunoController@novo');
+Route::post('/aluno/insert', 'AlunoController@insert');
+Route::get('/aluno/editar/{id}', 'AlunoController@editar');
+Route::post('/aluno/update/{id}', 'AlunoController@update');
+Route::get('/aluno/delete/{id}', 'AlunoController@delete');
+
+Route::get('/aluno/ajaxcep/{cep}', 'AlunoController@ajaxCep');
 
 //Relatorio
-Route::any('/relatorio', 'RelatorioController@index');
+Route::get('/relatorio', 'RelatorioController@index');
