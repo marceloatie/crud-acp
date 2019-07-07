@@ -41,7 +41,7 @@ class AlunoController extends Controller
     public function novo()
     {
         $selectCursos = Curso::pluck('nome', 'id_curso');
-        return view('aluno.criar')->with('selectCursos', $selectCursos);
+        return view('aluno.editar')->with('aluno', new Aluno)->with('selectCursos', $selectCursos);
     }
 
     /**

@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Alterar Aluno</h1>
-    {!! Form::open(['action' => ['AlunoController@update', $aluno->id_aluno], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    @if ($aluno->id_aluno == null)
+        <h1>Novo Aluno</h1>
+        {!! Form::open(['action' => 'AlunoController@insert', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    @else
+        <h1>Alterar Aluno</h1>
+        {!! Form::open(['action' => ['AlunoController@update', $aluno->id_aluno], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    @endif
         <div class="form-group">
             {{Form::label('nome', 'Nome')}}
             {{Form::text('nome', $aluno->nome, ['class' => 'form-control', 'placeholder' => 'Nome do aluno'])}}
