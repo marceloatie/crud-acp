@@ -41,7 +41,7 @@ class CursoController extends Controller
     public function novo()
     {
         $selectProfessores = Professor::pluck('nome', 'id_professor');
-        return view('curso.criar')->with('selectProfessores', $selectProfessores);
+        return view('curso.editar')->with('curso', new Curso)->with('selectProfessores', $selectProfessores);
     }
 
     /**
