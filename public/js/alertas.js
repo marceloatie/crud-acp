@@ -6,5 +6,5 @@ function confirmaExclusao(nomeRegistro, urlExclusao){
         window.location.assign(urlExclusao);
     }, function(){
         //Cancelar
-    });
+    }).set('labels', {ok:'Excluir', cancel:'Cancelar'});
 }
