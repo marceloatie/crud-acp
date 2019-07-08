@@ -26,7 +26,7 @@
             <div class="form-group">
                 {{Form::label('cep', 'CEP')}}
                 {{Form::text('cep', $aluno->cep, ['class' => 'form-control', 'placeholder' => '00000000', 'pattern' => "\d{8}" ])}}
-                <a onclick="consultaCep('{{url('aluno/ajaxcep')}}',document.getElementById('cep').value)">Preenchimento por CEP</a>
+                <button type=button class="btn btn-info" onclick="consultaCep('{{url('aluno/ajaxcep')}}',document.getElementById('cep').value)">Preenchimento por CEP</button>
             </div>
             <div class="form-group">
                 {{Form::label('estado', 'Estado')}}

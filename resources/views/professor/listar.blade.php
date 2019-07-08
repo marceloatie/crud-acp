@@ -6,8 +6,8 @@
 
     <div class="row">
     <div class="col-md-3"><h1>Professores</h1></div>
-    <div class="col-md-9" style="margin-top:35px">
-            <a href="{{url('/professor/novo')}}">NOVO</a>
+    <div class="col-md-9" style="margin-top:20px">
+            <a class="btn btn-success" href="{{url('/professor/novo')}}">NOVO</a>
     </div>
     </div>
     @if(count($professores) > 0)
