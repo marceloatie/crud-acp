@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <script src="{{ asset('js/alertas.js') }}"></script>
+
     <div class="row">
     <div class="col-md-3"><h1>Alunos</h1></div>
     <div class="col-md-9" style="margin-top:35px">
@@ -19,7 +22,7 @@
                         Registrado em {{(new DateTime($aluno->data_criacao))->modify("-4 hour")->format('d/m/Y H:i:s')}}
                     </div>
                     <div class="col-md-1">
-                            <a href="{{url('/aluno/delete').'/'.$aluno->id_aluno}}">EXCLUIR</a>
+                        <button type="button" class="btn btn-danger" onclick="confirmaExclusao('{{$aluno->nome}}','{{url('/aluno/delete').'/'.$aluno->id_aluno}}')">EXCLUIR</button>
                     </div>
                 </div>
             </div>
